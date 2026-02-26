@@ -1,0 +1,16 @@
+- name: install kubernetes (k3s)
+  hosts: all
+  tasks:
+    - name: k3s download
+      uri:
+        url: https://get.k3s.io
+        method: GET
+        dest: /tmp/install.sh
+        mode: '0755'
+    - name: k3s installation
+      shell: /tmp/install.sh
+      args:
+        creates: /usr/local/bin/k3s
+     
+      
+      
