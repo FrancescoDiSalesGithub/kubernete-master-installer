@@ -8,9 +8,7 @@
         dest: /tmp/install.sh
         mode: '0755'
     - name: k3s installation
-      shell: /tmp/install.sh
-      args:
-        creates: /usr/local/bin/k3s
+      ansible.builtin.command: bash /tmp/install.s
      
       
       
